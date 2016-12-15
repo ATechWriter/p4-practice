@@ -18,6 +18,13 @@
             <h1>Quilisma Consort Music Tracker</h1>
         </header>
 
+        <nav>
+            <ul class='navigate'>
+                <li id='pieces'><a href='/pieces'>Pieces</a></li>
+                <li id='composers'><a href='/composers'>Composers</a></li>
+            </ul>
+        </nav>
+
         <section>
             @yield('content')
         </section>

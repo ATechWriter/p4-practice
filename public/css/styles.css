@@ -1,8 +1,49 @@
+/* Header */
+
+
 h1 {
     font-family: sans-serif;
     font-size: 2em;
     color: #194545;
+    width: 100%;
+    text-align: center;
 }
+
+/* Navigation */
+
+nav {
+    background-color: #194545;
+    height: 45px;
+    padding: 20px 20px 0 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    width: 180px;
+    padding-left: 5px;
+    display: inline;
+    vertical-align: middle;
+}
+
+nav ul li {
+    font-family: sans-serif;
+    padding: 10px 30px 10px 0;
+    display: inline;
+    vertical-align: middle;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 18pt;
+    font-weight: bold;
+    color: #FBEED4;
+}
+
+nav ul li:hover {
+    background-color: white;
+}
+
+/* Body and contents */
 
 body {
     background-color: #FBEED4;

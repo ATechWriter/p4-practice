@@ -16,6 +16,40 @@ Route::get('/', function() {
 });
 
 /**
+* Show a list of all composers
+*/
+
+// Route::get('/composers', function() {
+//     return view('/composers/index');
+// });
+
+Route::get('/composers', 'ComposerController@index')->name('composers.index');
+
+/**
+* Show a form to add a composer
+*/
+
+Route::get('/composers/create', function() {
+    return view('/composers/create');
+});
+
+/**
+* Show a list of all composers
+*/
+
+Route::get('/pieces', function() {
+    return view('/pieces/index');
+});
+
+/**
+* Show a form to add a composer
+*/
+
+Route::get('/pieces/create', function() {
+    return view('/pieces/create');
+});
+
+/**
 * Debug DB
 */
 Route::get('/debug', function() {
