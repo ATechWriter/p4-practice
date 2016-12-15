@@ -18,19 +18,13 @@
                 <th>Dates</th>
             </tr>
 
-            <tr>
-                <td>Test Last</td>
-                <td>Test First</td>
-                <td>Test Dates</td>
-            </tr>
-
-            <!-- @foreach($composers as $composer)
+            @foreach($composers as $composer)
                 <tr>
                     <td>{{ $composer->last_name }}</td>
                     <td>{{ $composer->first_name }}</td>
                     <td>{{ $composer->dates }} </td>
                 </tr>
-            @endforeach -->
+            @endforeach
 
         </table>
     @endif

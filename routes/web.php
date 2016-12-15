@@ -19,10 +19,6 @@ Route::get('/', function() {
 * Show a list of all composers
 */
 
-// Route::get('/composers', function() {
-//     return view('/composers/index');
-// });
-
 Route::get('/composers', 'ComposerController@index')->name('composers.index');
 
 /**
@@ -34,15 +30,13 @@ Route::get('/composers/create', function() {
 });
 
 /**
-* Show a list of all composers
+* Show a list of all pieces
 */
 
-Route::get('/pieces', function() {
-    return view('/pieces/index');
-});
+Route::get('/pieces', 'PieceController@index')->name('pieces.index');
 
 /**
-* Show a form to add a composer
+* Show a form to add a piece
 */
 
 Route::get('/pieces/create', function() {

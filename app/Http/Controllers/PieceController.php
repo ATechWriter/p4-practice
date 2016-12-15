@@ -7,21 +7,21 @@ use Illuminate\Http\Request;
 use App\Piece;
 use App\Composer;
 
-class ComposerController extends Controller
+class PieceController extends Controller
 {
     /**
-     * Display a listing of all composers
+     * Display a listing of all pieces
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
-    {
-        $composers = Composer::get();
+     public function index(Request $request)
+     {
+         $pieces = Piece::get();
 
-        return view('composers.index')->with([
-            'composers' => $composers
-        ]);
-    }
+         return view('pieces.index')->with([
+             'pieces' => $pieces
+         ]);
+     }
 
     /**
      * Show the form for creating a new resource.

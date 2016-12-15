@@ -48,3 +48,21 @@ nav ul li:hover {
 body {
     background-color: #FBEED4;
 }
+
+table {
+    border: 1px solid black;
+    font-family: sans-serif;
+}
+
+th {
+    text-align: left;
+    vertical-align: middle;
+    padding: 5px;
+    color: #FBEED4;
+    background-color: #194545;
+}
+
+td {
+    vertical-align: middle;
+    padding: 5px;
+}
