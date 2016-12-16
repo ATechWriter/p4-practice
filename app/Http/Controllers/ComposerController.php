@@ -60,29 +60,47 @@ class ComposerController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * GET
+     * Display the specified composer
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        //
+        $composer = Composer::find($id);
+
+        if(is_null($composer)) {
+
+            Session::flash('message', 'Composer not found');
+
+            return redirect('/composers');
+        }
+
+        return view('composers.show')->with([
+            'composer' => $composer,
+        ]);
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * GET
+     * Show the form for editing the specified composer
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        //
+        $composer = Composer::find($id);
+
+        return view('composers.edit')->with(
+            ['composer' => $composer,]
+        );
     }
 
     /**
-     * Update the specified resource in storage.
+     * POST
+     * Update the specified composer in storage
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -90,7 +108,16 @@ class ComposerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        # Validation will go here!!
+
+        $composer = Composer::find($request->id);
+        $composer->first_name = $request->first_name;
+        $composer->last_name = $request->last_name;
+        $composer->dates = $request->dates;
+        $composer->save();
+
+        Session::flash('flash_message', 'Edits to '.$composer->first_name.' '.$composer->last_name.' saved');
+        return redirect('/composers');
     }
 
     /**

@@ -21,6 +21,7 @@
                 <th>Publication Date</th>
                 <th>Manuscript</th>
                 <th>Link</th>
+                <th>Actions</th>
             </tr>
 
             @foreach($pieces as $piece)
@@ -37,6 +38,7 @@
                             <a href='{{ $piece->link }}' target='_blank'>Go to manuscript</a>
                         @endif
                     </td>
+                    <td><a href='/pieces/{{ $piece->id }}'>View</a> | <a href='/pieces/{{ $piece->id }}/edit'>Edit</a></td>
                 </tr>
             @endforeach
 

@@ -20,40 +20,48 @@ Route::get('/', function() {
 });
 
 /**
-* Show a list of all composers
+* COMPOSER RESOURCE
 */
 
+# Show a list of all composers
 Route::get('/composers', 'ComposerController@index')->name('composers.index');
 
-/**
-* Show a form to add a composer
-*/
-
+# Show a form to add a composer
 Route::get('/composers/create', 'ComposerController@create')->name('composers.create');
 
+# Post a completed form to add a composer
+Route::post('/composers', 'ComposerController@store')->name('composers.store');
+
+# Show an individual composer
+Route::get('/composers/{id}', 'ComposerController@show')->name('composers.show');
+
+# Show a form to edit specified composer
+Route::get('/composers/{id}/edit', 'ComposerController@edit')->name('composers.edit');
+
+# Process form to edit specified composer
+Route::put('/composers/{id}', 'ComposerController@update')->name('composers.update');
+
 /**
-* Post a completed form to add a composer
+* PIECE RESOURCE
 */
 
-Route::post('composers', 'ComposerController@store')->name('composers.store');
-
-/**
-* Show a list of all pieces
-*/
-
+# Show a list of all pieces
 Route::get('/pieces', 'PieceController@index')->name('pieces.index');
 
-/**
-* Show a form to add a piece
-*/
-
+# Show a form to add a piece
 Route::get('/pieces/create', 'PieceController@create')->name('pieces.create');
 
-/**
-* Post a completed form to add a composer
-*/
-
+# Post a completed form to add a piece
 Route::post('pieces', 'PieceController@store')->name('pieces.store');
+
+# Show an individual piece
+Route::get('/pieces/{id}', 'PieceController@show')->name('pieces.show');
+
+# Show a form to edit specified piece
+Route::get('/pieces/{id}/edit', 'PieceController@edit')->name('pieces.edit');
+
+# Process form to edit specified piece
+Route::put('/pieces/{id}', 'PieceController@update')->name('pieces.update');
 
 /**
 * Debug DB

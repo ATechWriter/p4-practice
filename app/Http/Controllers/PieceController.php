@@ -49,7 +49,7 @@ class PieceController extends Controller
      */
     public function store(Request $request)
     {
-        # Validation wil go here!!
+        # Validation will go here!!
         $piece = new Piece();
         $piece->title = $request->input('title');
         $piece->composer_id = $request->input('composer_id');
@@ -67,29 +67,49 @@ class PieceController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * GET
+     * Display the specified piece
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        //
+        $piece = Piece::find($id);
+
+        if(is_null($piece)) {
+
+            Session::flash('message', 'Piece not found');
+
+            return redirect('/pieces');
+        }
+
+        return view('pieces.show')->with([
+            'piece' => $piece,
+        ]);
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * GET
+     * Show the form for editing the specified piece
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        //
+        $piece = Piece::find($id);
+        $composers_for_dropdown = Composer::getForDropdown();
+
+        return view('pieces.edit')->with([
+            'piece' => $piece,
+            'composers_for_dropdown' => $composers_for_dropdown,
+        ]);
     }
 
     /**
-     * Update the specified resource in storage.
+     * POST
+     * Update the specified piece in storage
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -97,7 +117,21 @@ class PieceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        # Validation will go here!!
+
+        $piece = Piece::find($request->id);
+        $piece->title = $request->title;
+        $piece->composer_id = $request->composer_id;
+        $piece->publication_date = $request->publication_date;
+        $piece->manuscript = $request->manuscript;
+        $piece->link = $request->link;
+        $piece->lyrics = $request->lyrics;
+        $piece->translation = $request->translation;
+        $piece->comments = $piece->comments;
+        $piece->save();
+
+        Session::flash('flash_message', 'Edits to '.$piece->title.' saved');
+        return redirect('/pieces');
     }
 
     /**
