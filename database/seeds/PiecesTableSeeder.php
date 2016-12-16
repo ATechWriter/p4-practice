@@ -39,7 +39,7 @@ class PiecesTableSeeder extends Seeder
             'title' => 'Once did I serve a cruell hart',
             'composer_id' => $composer_id,
             'publication_date' => '1609',
-            'manuscript' => 'Once did I serve a cruell hart',
+            'manuscript' => 'A Musicall Dreame',
             'link' => 'http://imslp.org/wiki/A_Musicall_Dreame_(Jones,_Robert)',
             'lyrics' => "Once did I serve a cruell hart with faith unfainde<br/>
             I still importune her piersing lookes that wrought my smart<br/>

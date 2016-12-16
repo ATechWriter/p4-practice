@@ -6,14 +6,17 @@ use Illuminate\Http\Request;
 
 use App\Piece;
 use App\Composer;
+use Session;
 
 class ComposerController extends Controller
 {
     /**
+     * GET
      * Display a listing of all composers
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index(Request $request)
     {
         $composers = Composer::get();
@@ -24,24 +27,36 @@ class ComposerController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * GET
+     * Show the form for creating a new composer
      *
      * @return \Illuminate\Http\Response
      */
+
     public function create()
     {
-        //
+        return view('composers.create');
     }
 
     /**
-     * Store a newly created resource in storage.
+     * POST
+     * Store a newly created composer in storage
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        # Validation will go here!!!
+        $composer = new Composer();
+        $composer->first_name = $request->input('first_name');
+        $composer->last_name = $request->input('last_name');
+        $composer->dates = $request->input('dates');
+        $composer->save();
+
+        Session::flash('flash_message', 'Composer '.$composer->first_name.' '.$composer->last_name.' added');
+
+        return redirect('/composers');
     }
 
     /**

@@ -7,8 +7,9 @@
 @section('content')
     <h1>Composers List</h1>
 
+    <a class='action-button' href='/composers/create'>Add Composer</a></br>
     @if(sizeof($composers) == 0)
-        No composers in database. Add a composer to begin.
+        No composers in database. <a href='/composers/create'>Add a composer?</a>
 
     @else
         <table>

@@ -6,10 +6,12 @@ use Illuminate\Http\Request;
 
 use App\Piece;
 use App\Composer;
+use Session;
 
 class PieceController extends Controller
 {
     /**
+     * GET
      * Display a listing of all pieces
      *
      * @return \Illuminate\Http\Response
@@ -24,24 +26,44 @@ class PieceController extends Controller
      }
 
     /**
-     * Show the form for creating a new resource.
+     * GET
+     * Show the form for creating a new piece
      *
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        //
+        $composers_for_dropdown = Composer::getForDropdown();
+
+        return view('pieces.create')->with([
+            'composers_for_dropdown' => $composers_for_dropdown
+        ]);
     }
 
     /**
-     * Store a newly created resource in storage.
+     * POST
+     * Store a newly created piece in storage
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        # Validation wil go here!!
+        $piece = new Piece();
+        $piece->title = $request->input('title');
+        $piece->composer_id = $request->input('composer_id');
+        $piece->publication_date = $request->input('publication_date');
+        $piece->manuscript = $request->input('manuscript');
+        $piece->link = $request->input('link');
+        $piece->lyrics = $request->input('lyrics');
+        $piece->translation = $request->input('translation');
+        $piece->comments = $request->input('comments');
+        $piece->save();
+
+        Session::flash('flash_message', 'Piece '.$piece->title.' added');
+
+        return redirect('/pieces');
     }
 
     /**

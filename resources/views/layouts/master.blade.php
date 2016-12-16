@@ -20,8 +20,8 @@
 
         <nav>
             <ul class='navigate'>
-                <li id='pieces'><a href='/pieces'>Pieces</a></li>
-                <li id='composers'><a href='/composers'>Composers</a></li>
+                <li id='pieces'><a href='/pieces'>View Pieces</a></li>
+                <li id='composers'><a href='/composers'>View Composers</a></li>
             </ul>
         </nav>
 

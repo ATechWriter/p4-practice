@@ -11,6 +11,10 @@
 |
 */
 
+/**
+* Show the homepage
+*/
+
 Route::get('/', function() {
     return view('index');
 });
@@ -25,9 +29,13 @@ Route::get('/composers', 'ComposerController@index')->name('composers.index');
 * Show a form to add a composer
 */
 
-Route::get('/composers/create', function() {
-    return view('/composers/create');
-});
+Route::get('/composers/create', 'ComposerController@create')->name('composers.create');
+
+/**
+* Post a completed form to add a composer
+*/
+
+Route::post('composers', 'ComposerController@store')->name('composers.store');
 
 /**
 * Show a list of all pieces
@@ -39,9 +47,13 @@ Route::get('/pieces', 'PieceController@index')->name('pieces.index');
 * Show a form to add a piece
 */
 
-Route::get('/pieces/create', function() {
-    return view('/pieces/create');
-});
+Route::get('/pieces/create', 'PieceController@create')->name('pieces.create');
+
+/**
+* Post a completed form to add a composer
+*/
+
+Route::post('pieces', 'PieceController@store')->name('pieces.store');
 
 /**
 * Debug DB
