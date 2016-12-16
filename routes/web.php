@@ -63,6 +63,12 @@ Route::get('/pieces/{id}/edit', 'PieceController@edit')->name('pieces.edit');
 # Process form to edit specified piece
 Route::put('/pieces/{id}', 'PieceController@update')->name('pieces.update');
 
+# Show a page to confirm deletion of specified piece
+Route::get('/pieces/{id}/delete', 'PieceController@delete')->name('pieces.destroy');
+
+# Delete specified piece from the database
+Route::delete('/pieces/{id}', 'PieceController@destroy')->name('pieces.destroy');
+
 /**
 * Debug DB
 */

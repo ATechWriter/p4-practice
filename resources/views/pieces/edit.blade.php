@@ -43,18 +43,15 @@
         <br/>
 
         <label>Lyrics</label>
-        <textarea id='lyrics' name='lyrics' rows='15' cols='40' value='{{ old('lyrics', $piece->lyrics) }}'>
-        </textarea>
+        <textarea id='lyrics' name='lyrics' rows='15' cols='40'>{{ old('lyrics', $piece->lyrics) }}</textarea>
         <br/>
 
         <label>Translation</label>
-        <textarea id='translation' name='translation' rows='15' cols='40' value='{{ old('translation', $piece->translation) }}'>
-        </textarea>
+        <textarea id='translation' name='translation' rows='15' cols='40'>{{ old('translation', $piece->translation) }}</textarea>
         <br/>
 
         <label>Comments</label>
-        <textarea id='comments' name='comments' rows='15' cols='40' value='{{ old('comments', $piece->comments) }}'>
-        </textarea>
+        <textarea id='comments' name='comments' rows='15' cols='40'>{{ old('comments', $piece->comments) }}</textarea>
         <br/>
 
         <button type='submit'>Update</button>

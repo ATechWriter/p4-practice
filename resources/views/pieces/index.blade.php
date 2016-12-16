@@ -38,7 +38,7 @@
                             <a href='{{ $piece->link }}' target='_blank'>Go to manuscript</a>
                         @endif
                     </td>
-                    <td><a href='/pieces/{{ $piece->id }}'>View</a> | <a href='/pieces/{{ $piece->id }}/edit'>Edit</a></td>
+                    <td><a href='/pieces/{{ $piece->id }}'>View</a> | <a href='/pieces/{{ $piece->id }}/edit'>Edit</a> | <a href='/pieces/{{ $piece->id }}/delete'>Delete</a></td>
                 </tr>
             @endforeach
 

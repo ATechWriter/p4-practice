@@ -135,13 +135,35 @@ class PieceController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * GET
+     * Show page to confirm deletion
+     */
+     public function delete($id) {
+
+         $piece = Piece::find($id);
+
+         return view('pieces.delete')->with('piece', $piece);
+     }
+
+    /**
+     * POST
+     * Remove the specified piece from storage
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        //
+        $piece = Piece::find($id);
+
+        if(is_null($piece)) {
+            Session::flash('message','Piece not found');
+            return redirect('/pieces');
+        }
+
+        $piece->delete();
+
+        Session::flash('flash_message', $piece->title.' deleted');
+        return redirect('/pieces');
     }
 }
