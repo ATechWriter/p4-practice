@@ -17,7 +17,7 @@
 
         <p><strong>This action cannot be undone.</strong></p>
 
-        <input type='submit' value='Yes'>
+        <input type='submit' value='Yes'>  <a href='/pieces/{{ $piece->id }}'>Cancel</a>
 
     </form>
 

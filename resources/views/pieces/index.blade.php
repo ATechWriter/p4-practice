@@ -7,10 +7,12 @@
 @section('content')
     <h1>Pieces List</h1>
 
-    <p><a class='action-button' href='/pieces/create'>Add Piece</a></p>
+    @if(Auth::check())
+        <p><a class='action-button' href='/pieces/create'>Add Piece</a></p>
+    @endif
 
     @if(sizeof($pieces) == 0)
-        No pieces in database. <a href='/pieces/create'>Add a piece?</a>
+        No pieces in database
 
     @else
         <table>
@@ -38,7 +40,11 @@
                             <a href='{{ $piece->link }}' target='_blank'>Go to manuscript</a>
                         @endif
                     </td>
-                    <td><a href='/pieces/{{ $piece->id }}'>View</a> | <a href='/pieces/{{ $piece->id }}/edit'>Edit</a> | <a href='/pieces/{{ $piece->id }}/delete'>Delete</a></td>
+                    <td><a href='/pieces/{{ $piece->id }}'>View</a>
+                        @if(Auth::check())
+                            | <a href='/pieces/{{ $piece->id }}/edit'>Edit</a> | <a href='/pieces/{{ $piece->id }}/delete'>Delete</a>
+                        @endif
+                    </td>
                 </tr>
             @endforeach
 

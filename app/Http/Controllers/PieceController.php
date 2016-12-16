@@ -18,7 +18,7 @@ class PieceController extends Controller
      */
      public function index(Request $request)
      {
-         $pieces = Piece::get();
+         $pieces = Piece::with('composer')->get();
 
          return view('pieces.index')->with([
              'pieces' => $pieces
@@ -61,7 +61,7 @@ class PieceController extends Controller
         $piece->comments = $request->input('comments');
         $piece->save();
 
-        Session::flash('flash_message', 'Piece '.$piece->title.' added');
+        Session::flash('flash_message', 'Piece "'.$piece->title.'" added');
 
         return redirect('/pieces');
     }
@@ -79,7 +79,7 @@ class PieceController extends Controller
 
         if(is_null($piece)) {
 
-            Session::flash('message', 'Piece not found');
+            Session::flash('flash_message', 'Piece not found');
 
             return redirect('/pieces');
         }
@@ -130,7 +130,7 @@ class PieceController extends Controller
         $piece->comments = $piece->comments;
         $piece->save();
 
-        Session::flash('flash_message', 'Edits to '.$piece->title.' saved');
+        Session::flash('flash_message', 'Edits to "'.$piece->title.'" saved');
         return redirect('/pieces');
     }
 
@@ -157,13 +157,13 @@ class PieceController extends Controller
         $piece = Piece::find($id);
 
         if(is_null($piece)) {
-            Session::flash('message','Piece not found');
+            Session::flash('flash_message','Piece not found');
             return redirect('/pieces');
         }
 
         $piece->delete();
 
-        Session::flash('flash_message', $piece->title.' deleted');
+        Session::flash('flash_message','"'.$piece->title.'" deleted');
         return redirect('/pieces');
     }
 }

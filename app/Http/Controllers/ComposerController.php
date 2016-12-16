@@ -72,7 +72,7 @@ class ComposerController extends Controller
 
         if(is_null($composer)) {
 
-            Session::flash('message', 'Composer not found');
+            Session::flash('flash_message', 'Composer not found');
 
             return redirect('/composers');
         }
@@ -130,4 +130,4 @@ class ComposerController extends Controller
 //     {
 //         //
 //     }
-// }
+}

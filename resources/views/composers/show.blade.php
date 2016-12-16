@@ -7,9 +7,11 @@
 @section('content')
     <h1>Composer Details</h1>
 
+    @if(Auth::check())
+        <p><a class='action-button' href='/composers/{{ $composer->id }}/edit'>Edit</a></p>
+    @endif
+
     <p>Name: {{ $composer->first_name }} {{ $composer->last_name }}</p>
     <p>Dates: {{ $composer->dates }}</p>
-
-    <p><a class='action-button' href='/composers/{{ $composer->id }}/edit'>Edit</a></p>
 
 @endsection

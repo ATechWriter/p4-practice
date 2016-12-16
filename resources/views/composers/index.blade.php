@@ -7,7 +7,9 @@
 @section('content')
     <h1>Composers List</h1>
 
-    <p><a class='action-button' href='/composers/create'>Add Composer</a></p>
+    @if(Auth::check())
+        <p><a class='action-button' href='/composers/create'>Add Composer</a></p>
+    @endif
 
     @if(sizeof($composers) == 0)
         No composers in database. <a href='/composers/create'>Add a composer?</a>
@@ -26,7 +28,11 @@
                     <td>{{ $composer->last_name }}</td>
                     <td>{{ $composer->first_name }}</td>
                     <td>{{ $composer->dates }} </td>
-                    <td><a href='/composers/{{ $composer->id }}'>View</a> | <a href='/composers/{{ $composer->id }}/edit'>Edit</a></td>
+                    <td><a href='/composers/{{ $composer->id }}'>View</a>
+                        @if(Auth::check())
+                            | <a href='/composers/{{ $composer->id }}/edit'>Edit</a>
+                        @endif
+                    </td>
                 </tr>
             @endforeach
 

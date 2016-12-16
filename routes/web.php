@@ -27,19 +27,19 @@ Route::get('/', function() {
 Route::get('/composers', 'ComposerController@index')->name('composers.index');
 
 # Show a form to add a composer
-Route::get('/composers/create', 'ComposerController@create')->name('composers.create');
+Route::get('/composers/create', 'ComposerController@create')->name('composers.create')->middleware('auth');
 
 # Post a completed form to add a composer
-Route::post('/composers', 'ComposerController@store')->name('composers.store');
+Route::post('/composers', 'ComposerController@store')->name('composers.store')->middleware('auth');
 
 # Show an individual composer
 Route::get('/composers/{id}', 'ComposerController@show')->name('composers.show');
 
 # Show a form to edit specified composer
-Route::get('/composers/{id}/edit', 'ComposerController@edit')->name('composers.edit');
+Route::get('/composers/{id}/edit', 'ComposerController@edit')->name('composers.edit')->middleware('auth');
 
 # Process form to edit specified composer
-Route::put('/composers/{id}', 'ComposerController@update')->name('composers.update');
+Route::put('/composers/{id}', 'ComposerController@update')->name('composers.update')->middleware('auth');
 
 /**
 * PIECE RESOURCE
@@ -49,25 +49,25 @@ Route::put('/composers/{id}', 'ComposerController@update')->name('composers.upda
 Route::get('/pieces', 'PieceController@index')->name('pieces.index');
 
 # Show a form to add a piece
-Route::get('/pieces/create', 'PieceController@create')->name('pieces.create');
+Route::get('/pieces/create', 'PieceController@create')->name('pieces.create')->middleware('auth');
 
 # Post a completed form to add a piece
-Route::post('pieces', 'PieceController@store')->name('pieces.store');
+Route::post('pieces', 'PieceController@store')->name('pieces.store')->middleware('auth');
 
 # Show an individual piece
 Route::get('/pieces/{id}', 'PieceController@show')->name('pieces.show');
 
 # Show a form to edit specified piece
-Route::get('/pieces/{id}/edit', 'PieceController@edit')->name('pieces.edit');
+Route::get('/pieces/{id}/edit', 'PieceController@edit')->name('pieces.edit')->middleware('auth');
 
 # Process form to edit specified piece
-Route::put('/pieces/{id}', 'PieceController@update')->name('pieces.update');
+Route::put('/pieces/{id}', 'PieceController@update')->name('pieces.update')->middleware('auth');
 
 # Show a page to confirm deletion of specified piece
-Route::get('/pieces/{id}/delete', 'PieceController@delete')->name('pieces.destroy');
+Route::get('/pieces/{id}/delete', 'PieceController@delete')->name('pieces.destroy')->middleware('auth');
 
 # Delete specified piece from the database
-Route::delete('/pieces/{id}', 'PieceController@destroy')->name('pieces.destroy');
+Route::delete('/pieces/{id}', 'PieceController@destroy')->name('pieces.destroy')->middleware('auth');
 
 /**
 * Debug DB
@@ -122,3 +122,8 @@ if(App::environment('local')) {
     });
 
 };
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+Route::get('/logout','Auth\LoginController@logout')->name('logout');
