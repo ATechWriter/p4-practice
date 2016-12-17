@@ -66,28 +66,10 @@ nav ul li a:hover {
     color: #194545;
 }
 
-/* Body and contents */
+/* General body contents */
 
 body {
     background-color: #FBEED4;
-}
-
-table {
-    border: 1px solid black;
-    font-family: sans-serif;
-}
-
-th {
-    text-align: left;
-    vertical-align: middle;
-    padding: 5px;
-    color: #FBEED4;
-    background-color: #194545;
-}
-
-td {
-    vertical-align: middle;
-    padding: 5px;
 }
 
 a.action-button {
@@ -105,4 +87,24 @@ a.action-button:hover {
     color: #194545;
     background-color: #FBEED4;
     border: 1px solid #194545;
+}
+
+/* Sortable tables using jQuery tablesorter plugin */
+
+table {
+    border: 1px solid black;
+    font-family: sans-serif;
+}
+
+th {
+    text-align: left;
+    vertical-align: middle;
+    padding: 5px;
+    color: #FBEED4;
+    background-color: #194545;
+}
+
+td {
+    vertical-align: middle;
+    padding: 5px;
 }

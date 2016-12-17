@@ -2,12 +2,14 @@
 <html>
 <head>
     <title>
-        {{-- Yield the title if it exists, otherwise default to 'Foobooks' --}}
+        {{-- Yield the title if it exists, otherwise default to 'QCMT' --}}
         @yield('title','QCMT')
     </title>
 
     <meta charset='utf-8'>
     <link href="/css/styles.css" type='text/css' rel='stylesheet'>
+    <script type='text/javascript' src='/js/jquery-3.1.1.min.js'></script>
+    <script type='text/javascript' src='/js/jquery.tablesorter.js'></script>
 
         @yield('head')
 
