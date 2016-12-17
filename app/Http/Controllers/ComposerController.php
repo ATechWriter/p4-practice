@@ -115,7 +115,14 @@ class ComposerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        # Validation will go here!!
+        # Validate the request
+        $this->validate($request, [
+            'first_name' => 'nullable|min:2',
+            'last_name' => 'required|min:2',
+            'dates' => 'required|min:4',
+        ]);
+
+        # If valid, save the new composer
 
         $composer = Composer::find($request->id);
         $composer->first_name = $request->first_name;
