@@ -7,7 +7,7 @@ Submitted as a project for the course Dynamic Web Applications.
 
 * __[Github Repository](https://github.com/ATechWriter/p4-practice)__
 * __[Live Site](http://p4-practice.josquinia.org/)__
-* __[Demo]()__
+* __[Demo](http://www.screencast.com/t/iuaF0ZzF0u)__
 
 Yes, my live site is not at p4.josquinia.org. That's because when I tried to do P3, I ended up with a fatal error, so I needed to start over with a new repository, directory, and subdomain. I assumed something similar might happen again, so I started with p4-practice and planned to rebuild it all on p4 when I knew it wouldn't break.
 
