@@ -108,20 +108,8 @@ Route::get('/debug', function() {
 });
 
 /**
-* Destroy the DB
+* Authentication routes
 */
-
-if(App::environment('local')) {
-
-    Route::get('/drop', function() {
-
-        DB::statement('DROP database qcmt');
-        DB::statement('CREATE database qcmt');
-
-        return 'Dropped qcmt database; created qcmt database.';
-    });
-
-};
 
 Auth::routes();
 

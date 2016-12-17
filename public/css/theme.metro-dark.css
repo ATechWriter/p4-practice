@@ -8,7 +8,7 @@ Metro Dark Theme
 	color: #000;
 	background-color: #333;
 	border-spacing: 0;
-	margin: 10px 0 15px;
+	margin: 0 0 15px 35px;
 	text-align: left;
 }
 
@@ -71,7 +71,7 @@ Metro Dark Theme
 .tablesorter-metro-dark tbody > tr:hover > td,
 .tablesorter-metro-dark tbody > tr.even:hover > td,
 .tablesorter-metro-dark tbody > tr.odd:hover > td {
-	background: #bbb;
+	background: #7F9797;
 	color: #000;
 }
 

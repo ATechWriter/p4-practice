@@ -15,38 +15,39 @@
 
         <input name='id' value='{{ $composer->id }}' type='hidden'>
 
-        <label>First Name</label>
-        <input type='text' id='first_name' name='first_name' value='{{ old('first_name', $composer->first_name) }}'>
-        @if($errors->get('first_name'))
-            <ul class='errors'>
-                @foreach($errors->get('first_name') as $error)
-                    <li>{{ $error }} </li>
-                @endforeach
-            </ul>
-        @endif
-        <br/>
-
-        <label>Last Name</label>
-        <input type='text' id='last_name' name='last_name' value='{{ old('last_name', $composer->last_name) }}'>
-        @if($errors->get('last_name'))
-            <ul class='errors'>
-                @foreach($errors->get('last_name') as $error)
-                    <li>{{ $error }} </li>
-                @endforeach
-            </ul>
-        @endif
-        <br/>
-
-        <label>Dates</label>
-        <input type='text' id='dates' name='dates' value='{{ old('dates', $composer->dates) }}'>
-        @if($errors->get('dates'))
-            <ul class='errors'>
-                @foreach($errors->get('dates') as $error)
-                    <li>{{ $error }} </li>
-                @endforeach
-            </ul>
-        @endif
-        <br/>
+        <div class='form-group'>
+            <label>First Name</label><br/>
+            <input type='text' id='first_name' name='first_name' value='{{ old('first_name', $composer->first_name) }}'>
+            @if($errors->get('first_name'))
+                <ul class='errors'>
+                    @foreach($errors->get('first_name') as $error)
+                        <li>{{ $error }} </li>
+                    @endforeach
+                </ul>
+            @endif
+        </div>
+        <div class='form-group'>
+            <label>Last Name</label><br/>
+            <input type='text' id='last_name' name='last_name' value='{{ old('last_name', $composer->last_name) }}'>
+            @if($errors->get('last_name'))
+                <ul class='errors'>
+                    @foreach($errors->get('last_name') as $error)
+                        <li>{{ $error }} </li>
+                    @endforeach
+                </ul>
+            @endif
+        </div>
+        <div class='form-group'>
+            <label>Dates</label><br/>
+            <input type='text' id='dates' name='dates' value='{{ old('dates', $composer->dates) }}'>
+            @if($errors->get('dates'))
+                <ul class='errors'>
+                    @foreach($errors->get('dates') as $error)
+                        <li>{{ $error }} </li>
+                    @endforeach
+                </ul>
+            @endif
+        </div>
 
         <button type='submit'>Update</button>
 

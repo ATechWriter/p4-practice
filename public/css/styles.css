@@ -17,28 +17,26 @@ header a {
     text-decoration: none;
 }
 
-/* Headers */
-
-
-h1 {
+div.flash_message {
+    color: #FBEED4;
+    background-color: #722929;
+    padding: 12px 35px;
     font-family: sans-serif;
-    font-size: 2em;
-    color: #194545;
-    width: 100%;
-    text-align: center;
+    font-weight: bold;
 }
 
 /* Navigation */
 
 nav {
     background-color: #194545;
-    height: 45px;
-    padding: 20px 20px 0 20px;
+    /*height: 45px;*/
+    padding: 20px;
 }
 
 nav ul {
     list-style-type: none;
     width: 180px;
+    margin: 0 0 0 -20px;
     padding-left: 5px;
     display: inline;
     vertical-align: middle;
@@ -46,7 +44,7 @@ nav ul {
 
 nav ul li {
     font-family: sans-serif;
-    padding: 10px 30px 10px 0;
+    padding: 20px 30px 20px 30px;
     display: inline;
     vertical-align: middle;
 }
@@ -66,11 +64,59 @@ nav ul li a:hover {
     color: #194545;
 }
 
+/* Headings */
+
+h1 {
+    font-family: sans-serif;
+    font-size: 2em;
+    color: #194545;
+    margin-left: 35px;
+    text-align: left;
+    padding: 15px 0 4px 0;
+}
+
+h2 {
+    font-family: sans-serif;
+    font-size: 1.25em;
+    color: #194545;
+    margin-left: 35px;
+    text-align: left;
+    padding: 7px 0 4px 0;
+}
+
 /* General body contents */
 
 body {
     background-color: #FBEED4;
+    margin-left: 0px;
+    font-family: sans-serif;
 }
+
+p {
+    margin-left: 35px;
+    padding: 0 0 7px 0;
+}
+
+ul {
+    margin-left: 35px;
+}
+
+div.blurb {
+    border-right: solid thin #194545;
+    padding-right: 20px;
+    width: 35%;
+    float: left;
+    clear: right;
+}
+
+footer {
+    color: #FBEED4;
+    background-color: #194545;
+    padding: 12px 0 12px 35px;
+    clear: both;
+}
+
+/* Action buttons */
 
 a.action-button {
     vertical-align: middle;
@@ -87,6 +133,45 @@ a.action-button:hover {
     color: #194545;
     background-color: #FBEED4;
     border: 1px solid #194545;
+}
+
+/* Forms */
+
+div.panel-heading {
+    font-family: sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+    color: #194545;
+    margin-left: 35px;
+    text-align: left;
+    padding: 15px 0 4px 0;
+}
+
+form {
+    margin-left: 35px;
+}
+
+form.form-horizontal {
+    margin-left: 35px;
+}
+
+div.col-md-6 {
+    margin: 6px 0 12px 0;
+}
+
+div.form-group {
+    margin: 12px 0 6px 0;
+    clear: both;
+}
+
+div.form-group-float {
+    margin: 12px 12px 6px 0;
+    float: left;
+    clear: right;
+}
+
+div.form-group label {
+    color: #194545;
 }
 
 /* Sortable tables using jQuery tablesorter plugin */
