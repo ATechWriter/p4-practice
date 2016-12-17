@@ -67,7 +67,7 @@
             @endif
         </div>
         <div class='form-group'>
-            <label>Link</label></br>
+            <label>Link</label><br/>
             <input type='url' size='80' id='link' name='link' value='{{ old('link', $piece->link) }}'>
             @if($errors->get('link'))
                 <ul class='errors'>

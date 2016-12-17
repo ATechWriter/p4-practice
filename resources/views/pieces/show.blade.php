@@ -15,7 +15,7 @@
     <p>Composer: {{ $piece->composer->first_name }} {{ $piece->composer->last_name }}</p>
     <p>Publication Date: {{ $piece->publication_date }}</p>
     <p>Manuscript: {{ $piece->manuscript }}</p>
-    <p>Link: {{ $piece->link }}</p>
+    <p>Link: <a href='{{ $piece->link }}'>{{ $piece->link }}</a></p>
 
     <div class=piece-comments>
         <h2>Comments</h2>

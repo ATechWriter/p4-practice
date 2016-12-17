@@ -6,7 +6,7 @@
 
 @section('content')
 
-    <h1>About to Delete {{ $piece->title }}</h1>
+    <h1>About to Delete "{{ $piece->title }}"</h1>
     <form method='POST' action='/pieces/{{ $piece->id }}'>
 
         {{ method_field('DELETE') }}

@@ -68,3 +68,5 @@ This project includes or references the following tools, resources, etc.
 * __[php.net](http://php.net)__: PHP documentation for command and syntax reference
 
 * __[Stack Overflow](http://stackoverflow.com)__: Debugging help
+
+* __[IMSLP Petrucci Music Library](http://imslp.org/)__: Source for digital facsimiles of public domain music manuscripts,  incunabula, and books.
