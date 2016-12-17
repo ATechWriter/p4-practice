@@ -18,7 +18,7 @@ I fulfilled the following requirements that are specific to P4:
 
 * __Database__: The 'qcmt' database has two tables: composers and pieces. Composers has a one-to-many relationship with pieces.
 
-* __Migrations and Seeds__: Migrations and seeds are functional. There are seeds for composers and pieces, and the seeder for the users table includes the required Jill and Jamal users.
+* __Migrations and Seeds__: Migrations and seeds are functional. There are seeds for composers and pieces, and the seeder for the users table includes the required test users.
 
 * __CRUD Actions__: All four actions are included in the app. Guest users can only perform read actions.
 
@@ -57,7 +57,7 @@ This project includes or references the following tools, resources, etc.
   * [Download](http://plugins.jquery.com/tablesorter/)
   * [Documentation](https://mottie.github.io/tablesorter/docs/index.html)
 
-* __Font "Blackwood Castle" by Dieter Steffmann__(http://www.fontspace.com/dieter-steffmann/blackwood-castle): Freeware font used in banner
+* __Font "Blackwood Castle" by Dieter Steffmann(http://www.fontspace.com/dieter-steffmann/blackwood-castle)__: Freeware font used in banner
 
 * __[W3Schools](http://www.w3schools.com)__: Reference for CSS, HTML, JavaScript, and jQuery
 

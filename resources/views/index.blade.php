@@ -20,10 +20,6 @@
         </ul>
         <h2>Conventions</h2>
         <p>
-            Please avoid adding duplicates. Before adding a composer or piece,
-            check whether it's already in the database.
-        </p>
-        <p>
             With early music, dates can be very precise or rather less so.
             Below are several examples of acceptable ways to indicate dates.
             It's more useful if dates are as specific as possible.
