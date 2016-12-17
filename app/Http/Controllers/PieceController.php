@@ -49,7 +49,19 @@ class PieceController extends Controller
      */
     public function store(Request $request)
     {
-        # Validation will go here!!
+        # Validate the request
+        $this->validate($request, [
+            'title' => 'required|min:2',
+            'composer_id' => 'required|integer',
+            'publication_date' => 'nullable|min:4',
+            'manuscript' => 'nullable|min:4',
+            'link' => 'nullable|url',
+            'lyrics' => 'nullable|min:4',
+            'translation' => 'nullable|min:4',
+            'comments' => 'nullable|min:4'
+        ]);
+
+        # If valid, save the new piece
         $piece = new Piece();
         $piece->title = $request->input('title');
         $piece->composer_id = $request->input('composer_id');
@@ -117,8 +129,19 @@ class PieceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        # Validation will go here!!
+        # Validate the request
+        $this->validate($request, [
+            'title' => 'required|min:2',
+            'composer_id' => 'required|integer',
+            'publication_date' => 'nullable|min:4',
+            'manuscript' => 'nullable|min:4',
+            'link' => 'nullable|url',
+            'lyrics' => 'nullable|min:4',
+            'translation' => 'nullable|min:4',
+            'comments' => 'nullable|min:4'
+        ]);
 
+        # If valid, save changes to the piece
         $piece = Piece::find($request->id);
         $piece->title = $request->title;
         $piece->composer_id = $request->composer_id;

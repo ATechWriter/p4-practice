@@ -1,4 +1,23 @@
-/* Header */
+/* Banner */
+
+@font-face {
+    font-family: blackwoodcastle;
+    src: url(blackwoodcastle.ttf);
+}
+
+header {
+    font-family: blackwoodcastle;
+    color: #194545;
+    font-size: 4em;
+    text-align: left;
+}
+
+header a {
+    color: #194545;
+    text-decoration: none;
+}
+
+/* Headers */
 
 
 h1 {

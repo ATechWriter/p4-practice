@@ -47,7 +47,14 @@ class ComposerController extends Controller
      */
     public function store(Request $request)
     {
-        # Validation will go here!!!
+        # Validate the request
+        $this->validate($request, [
+            'first_name' => 'nullable|min:2',
+            'last_name' => 'required|min:2',
+            'dates' => 'required|min:4',
+        ]);
+
+        # If valid, save the new composer
         $composer = new Composer();
         $composer->first_name = $request->input('first_name');
         $composer->last_name = $request->input('last_name');

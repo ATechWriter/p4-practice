@@ -19,7 +19,7 @@
         @endif
 
         <header>
-            <h1>Quilisma Consort Music Tracker</h1>
+            <a href='/'>Quilisma Consort Music Tracker</a>
         </header>
 
         <nav>
